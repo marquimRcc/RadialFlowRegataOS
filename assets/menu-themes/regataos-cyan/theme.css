@@ -1,0 +1,151 @@
+/* SPDX-FileCopyrightText: 2026 Regata OS Team */
+/* SPDX-License-Identifier: MIT */
+
+.menu-node {
+  --child-distance: 120px;
+  --grandchild-distance: 25px;
+
+  --center-size: 96px;
+  --submenu-size: 56px;
+  --child-size: 64px;
+  --grandchild-size: 16px;
+  --connector-width: 8px;
+
+  --menu-transition: all 220ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  transition: var(--menu-transition);
+
+  /* Positioning */
+  &.child.type-submenu {
+    transform: translate(calc(max(var(--child-distance), 12px * var(--sibling-count)) * var(--dir-x)),
+        calc(max(var(--child-distance), 12px * var(--sibling-count)) * var(--dir-y)));
+  }
+
+  &.child:not(.type-submenu) {
+    transform: translate(calc(max(var(--child-distance), 12px * var(--sibling-count)) * var(--dir-x)),
+        calc(max(var(--child-distance), 12px * var(--sibling-count)) * var(--dir-y))) !important;
+
+    &.hovered {
+      transform: scale(1.22) translate(calc(max(var(--child-distance), 12px * var(--sibling-count)) * var(--dir-x)),
+          calc(max(var(--child-distance), 12px * var(--sibling-count)) * var(--dir-y))) !important;
+    }
+  }
+
+  &.grandchild {
+    transform: translate(calc(var(--grandchild-distance) * var(--dir-x)),
+        calc(var(--grandchild-distance) * var(--dir-y)));
+  }
+
+  &.active:has(>.hovered)>.child {
+    transform: scale(calc(1.12 - pow(var(--angle-diff) / 180, 0.2) * 0.12)) translate(calc(max(var(--child-distance), 12px * var(--sibling-count)) * var(--dir-x)),
+        calc(max(var(--child-distance), 12px * var(--sibling-count)) * var(--dir-y)));
+
+    &.hovered {
+      transform: scale(1.25) translate(calc(max(var(--child-distance), 12px * var(--sibling-count)) * var(--dir-x)),
+          calc(max(var(--child-distance), 12px * var(--sibling-count)) * var(--dir-y)));
+    }
+  }
+
+  /* Layers & Appearance */
+  .icon-container {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    color: var(--text-color);
+    transition: var(--menu-transition);
+  }
+
+  .arrow-layer,
+  .icon-layer {
+    position: absolute;
+    transition: var(--menu-transition);
+  }
+
+  .icon-layer {
+    border-radius: 50%;
+    background: var(--node-background);
+    border: 2px solid rgba(255, 255, 255, 0.16);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(14px);
+  }
+
+  .arrow-layer {
+    opacity: 0;
+  }
+
+  /* Center Hub (Active) */
+  &.active>.arrow-layer {
+    width: 0;
+    height: 0;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-bottom: 9px solid var(--accent-color);
+    left: -9px;
+    top: -5px;
+    transform: scale(1) rotate(var(--pointer-angle)) translateY(calc(-0.5 * var(--center-size) - 6px));
+    opacity: 1;
+    filter: drop-shadow(0 0 8px var(--glow-color));
+  }
+
+  &.active>.icon-layer {
+    top: calc(-1 * var(--center-size) / 2);
+    left: calc(-1 * var(--center-size) / 2);
+    width: var(--center-size);
+    height: var(--center-size);
+    background: var(--background-color);
+    border: 2.5px solid rgba(0, 229, 255, 0.4);
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(0, 229, 255, 0.1);
+  }
+
+  &.active:has(>.hovered)>.icon-layer {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 30px var(--glow-color);
+  }
+
+  /* Show Icons */
+  &.active>.icon-layer>.icon-container,
+  &.parent>.icon-layer>.icon-container,
+  &.child>.icon-layer>.icon-container {
+    opacity: 1;
+  }
+
+  /* Children Slices */
+  &.child>.icon-layer {
+    top: calc(-1 * var(--child-size) / 2);
+    left: calc(-1 * var(--child-size) / 2);
+    width: var(--child-size);
+    height: var(--child-size);
+  }
+
+  &.child.hovered>.icon-layer {
+    border-color: #ffffff;
+    background: linear-gradient(135deg, rgba(0, 136, 255, 0.95), rgba(0, 229, 255, 0.9));
+    box-shadow: 0 0 35px var(--glow-color);
+  }
+
+  &.child.hovered>.icon-layer>.icon-container {
+    color: #ffffff;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+  }
+
+  /* Quick Select Key */
+  .quick-key {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  }
+}

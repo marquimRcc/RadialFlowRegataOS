@@ -1,0 +1,31 @@
+// SPDX-FileCopyrightText: 2026 Regata OS Team
+// SPDX-License-Identifier: MIT
+
+{
+  name: 'Regata OS Cyan',
+  author: 'Regata OS Team',
+  license: 'MIT',
+  themeVersion: '1.0',
+  engineVersion: 1,
+
+  maxMenuRadius: 170,
+  centerTextWrapWidth: 100,
+  drawChildrenBelow: true,
+  drawWedgeSeparators: true,
+  drawSelectionWedges: true,
+
+  colors: {
+    'accent-color': '#00e5ff',
+    'accent-secondary': '#0088ff',
+    'background-color': 'rgba(10, 15, 25, 0.92)',
+    'node-background': 'rgba(18, 26, 42, 0.94)',
+    'text-color': '#f0f4fc',
+    'glow-color': 'rgba(0, 229, 255, 0.65)',
+  },
+
+  layers: [
+    { class: 'arrow-layer', content: 'none' },
+    { class: 'icon-layer', content: 'icon' },
+    { class: 'quick-key', content: 'quick-select-key' },
+  ],
+}

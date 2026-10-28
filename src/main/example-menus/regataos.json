@@ -1,0 +1,265 @@
+{
+  "shortcut": "Control+Space",
+  "shortcutID": "regataos-menu",
+  "useFixedPosition": false,
+  "fixedMenuPosition": {
+    "x": 0.5,
+    "y": 0.5
+  },
+  "root": {
+    "type": "root",
+    "name": "Regata OS",
+    "icon": "apps",
+    "iconTheme": "material-symbols-rounded",
+    "activateWorkflow": {
+      "quickSelectKey": "Backspace",
+      "actions": [
+        {
+          "type": "close-menu"
+        }
+      ]
+    },
+    "children": [
+      {
+        "type": "button",
+        "name": "Adicionar Widgets",
+        "icon": "widgets",
+        "iconTheme": "material-symbols-rounded",
+        "selectWorkflow": {
+          "quickSelectKey": "W",
+          "actions": [
+            {
+              "type": "execute-command",
+              "command": "qdbus6 org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.toggleWidgetExplorer",
+              "detached": true,
+              "isolated": false
+            },
+            {
+              "type": "close-menu"
+            }
+          ]
+        }
+      },
+      {
+        "type": "button",
+        "name": "Game Access",
+        "icon": "sports_esports",
+        "iconTheme": "material-symbols-rounded",
+        "selectWorkflow": {
+          "quickSelectKey": "G",
+          "actions": [
+            {
+              "type": "execute-command",
+              "command": "regataos-gcs",
+              "detached": true,
+              "isolated": false
+            },
+            {
+              "type": "close-menu"
+            }
+          ]
+        }
+      },
+      {
+        "type": "button",
+        "name": "Regata OS Update",
+        "icon": "update",
+        "iconTheme": "material-symbols-rounded",
+        "selectWorkflow": {
+          "quickSelectKey": "U",
+          "actions": [
+            {
+              "type": "execute-command",
+              "command": "regataos-update-manager",
+              "detached": true,
+              "isolated": false
+            },
+            {
+              "type": "close-menu"
+            }
+          ]
+        }
+      },
+      {
+        "type": "button",
+        "name": "Max-Q",
+        "icon": "speed",
+        "iconTheme": "material-symbols-rounded",
+        "selectWorkflow": {
+          "quickSelectKey": "M",
+          "actions": [
+            {
+              "type": "execute-command",
+              "command": "prime-settings",
+              "detached": true,
+              "isolated": false
+            },
+            {
+              "type": "close-menu"
+            }
+          ]
+        }
+      },
+      {
+        "type": "button",
+        "name": "Suporte Regata OS",
+        "icon": "help",
+        "iconTheme": "material-symbols-rounded",
+        "selectWorkflow": {
+          "quickSelectKey": "S",
+          "actions": [
+            {
+              "type": "execute-command",
+              "command": "regataos-help",
+              "detached": true,
+              "isolated": false
+            },
+            {
+              "type": "close-menu"
+            }
+          ]
+        }
+      },
+      {
+        "type": "button",
+        "name": "Regata OS Store",
+        "icon": "storefront",
+        "iconTheme": "material-symbols-rounded",
+        "selectWorkflow": {
+          "quickSelectKey": "L",
+          "actions": [
+            {
+              "type": "execute-command",
+              "command": "regataos-store",
+              "detached": true,
+              "isolated": false
+            },
+            {
+              "type": "close-menu"
+            }
+          ]
+        }
+      },
+      {
+        "type": "button",
+        "name": "Capturar Tela",
+        "icon": "photo_camera",
+        "iconTheme": "material-symbols-rounded",
+        "selectWorkflow": {
+          "quickSelectKey": "C",
+          "actions": [
+            {
+              "type": "execute-command",
+              "command": "spectacle -b -n -c",
+              "detached": true,
+              "isolated": false
+            },
+            {
+              "type": "close-menu"
+            }
+          ]
+        }
+      },
+      {
+        "type": "submenu",
+        "name": "Janelas & Controle",
+        "icon": "dashboard_customize",
+        "iconTheme": "material-symbols-rounded",
+        "openWorkflow": {
+          "quickSelectKey": "J",
+          "actions": []
+        },
+        "activateWorkflow": {
+          "quickSelectKey": "Backspace",
+          "actions": [
+            {
+              "type": "close-submenu"
+            }
+          ]
+        },
+        "children": [
+          {
+            "type": "button",
+            "name": "Maximizar",
+            "icon": "fullscreen",
+            "iconTheme": "material-symbols-rounded",
+            "selectWorkflow": {
+              "quickSelectKey": "M",
+              "actions": [
+                {
+                  "type": "execute-command",
+                  "command": "qdbus6 org.kde.kglobalaccel /component/kwin invokeShortcut 'Window Maximize'",
+                  "detached": true,
+                  "isolated": false
+                },
+                {
+                  "type": "close-menu"
+                }
+              ]
+            }
+          },
+          {
+            "type": "button",
+            "name": "Snap Esquerda",
+            "icon": "arrow_left_alt",
+            "iconTheme": "material-symbols-rounded",
+            "selectWorkflow": {
+              "quickSelectKey": "E",
+              "actions": [
+                {
+                  "type": "execute-command",
+                  "command": "qdbus6 org.kde.kglobalaccel /component/kwin invokeShortcut 'Window Quick Tile Left'",
+                  "detached": true,
+                  "isolated": false
+                },
+                {
+                  "type": "close-menu"
+                }
+              ]
+            }
+          },
+          {
+            "type": "button",
+            "name": "Snap Direita",
+            "icon": "arrow_right_alt",
+            "iconTheme": "material-symbols-rounded",
+            "selectWorkflow": {
+              "quickSelectKey": "D",
+              "actions": [
+                {
+                  "type": "execute-command",
+                  "command": "qdbus6 org.kde.kglobalaccel /component/kwin invokeShortcut 'Window Quick Tile Right'",
+                  "detached": true,
+                  "isolated": false
+                },
+                {
+                  "type": "close-menu"
+                }
+              ]
+            }
+          },
+          {
+            "type": "button",
+            "name": "Configurações",
+            "icon": "settings",
+            "iconTheme": "material-symbols-rounded",
+            "selectWorkflow": {
+              "quickSelectKey": "C",
+              "actions": [
+                {
+                  "type": "execute-command",
+                  "command": "systemsettings",
+                  "detached": true,
+                  "isolated": false
+                },
+                {
+                  "type": "close-menu"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

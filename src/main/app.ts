@@ -59,6 +59,8 @@ import { UpdateChecker } from './utils/update-checker';
 import { AchievementTracker } from './achievements/achievement-tracker';
 import { supportsIsolatedProcesses } from './utils/shell';
 import { ExportedMenuV2 } from '../common/settings-schemata/exported-menu-v2';
+import { isGameModeActive } from './utils/gamemode';
+
 
 /**
  * This class contains the main host process logic of Kando. It is responsible for
@@ -434,10 +436,17 @@ export class KandoApp {
    * @param request Required information to select correct menu.
    */
   public async showMenu(request: ShowMenuRequest) {
+    // Regata OS Gamer Guard: Auto-pause radial menu when GameMode is active
+    if (request.trigger && isGameModeActive()) {
+      console.log('Regata OS Radial Flow: GameMode is active, auto-pausing radial menu.');
+      return;
+    }
+
     // Create and load the main window if it does not exist yet.
     if (!this.menuWindow) {
       await this.createMenuWindow();
     }
+
 
     const [wmInfo, systemIconsChanged] = await Promise.all([
       this.backend.getWMInfo(),
@@ -1854,8 +1863,13 @@ export class KandoApp {
     } else if (process.platform === 'darwin') {
       menu = require('./example-menus/macos.json');
     } else {
-      menu = require('./example-menus/linux.json');
+      try {
+        menu = require('./example-menus/regataos.json');
+      } catch {
+        menu = require('./example-menus/linux.json');
+      }
     }
+
 
     const translate = (item: MenuItem | RootMenuItem) => {
       item.name = i18next.t(item.name as ParseKeys);

@@ -32,10 +32,10 @@ export const GENERAL_SETTINGS_SCHEMA_V1 = z.object({
   showIntroductionDialog: z.boolean().default(true),
 
   /** The name of the theme to use for the menu. */
-  menuTheme: z.string().default('default'),
+  menuTheme: z.string().default('regataos-cyan'),
 
   /** The name of the theme which should be used for the dark mode. */
-  darkMenuTheme: z.string().default('default'),
+  darkMenuTheme: z.string().default('regataos-cyan'),
 
   /**
    * The accent color overrides to use for menu themes. The outer key is the theme's ID,

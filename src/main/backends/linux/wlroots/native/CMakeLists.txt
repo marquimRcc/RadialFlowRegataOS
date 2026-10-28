@@ -20,8 +20,20 @@ foreach(PROTOCOL ${PROTOCOLS})
   list(APPEND SOURCE_FILES ${BASENAME}.c)
 endforeach()
 
+find_package(PkgConfig QUIET)
+if (PKG_CONFIG_FOUND)
+  pkg_check_modules(WAYLAND wayland-client)
+endif ()
+
 add_library(NativeWLR SHARED ${SOURCE_FILES} ${CMAKE_JS_SRC})
 
 set_target_properties(NativeWLR PROPERTIES PREFIX "" SUFFIX ".node")
-target_link_libraries(NativeWLR ${CMAKE_JS_LIB})
-target_include_directories(NativeWLR PRIVATE ${NODE_ADDON_API_DIR} ${CMAKE_JS_INC} ${CMAKE_CURRENT_BINARY_DIR})
+target_link_libraries(NativeWLR ${CMAKE_JS_LIB} ${WAYLAND_LIBRARIES})
+target_include_directories(NativeWLR PRIVATE 
+  ${NODE_ADDON_API_DIR} 
+  ${CMAKE_JS_INC} 
+  ${CMAKE_CURRENT_BINARY_DIR}
+  ${WAYLAND_INCLUDE_DIRS}
+  /usr/include/wayland
+)
+

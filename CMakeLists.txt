@@ -28,6 +28,19 @@ if (APPLE)
 endif ()
 
 if (UNIX AND NOT APPLE)
-  add_subdirectory(src/main/backends/linux/wlroots/native)
-  add_subdirectory(src/main/backends/linux/x11/native)
+  find_path(XKBCOMMON_INCLUDE_DIR "xkbcommon/xkbcommon.h")
+  if (XKBCOMMON_INCLUDE_DIR)
+    add_subdirectory(src/main/backends/linux/wlroots/native)
+  else ()
+    message(STATUS "xkbcommon/xkbcommon.h not found, skipping NativeWLR (not needed for KDE Plasma/Regata OS)")
+  endif ()
+
+  find_path(XTEST_INCLUDE_DIR "X11/extensions/XTest.h")
+  if (XTEST_INCLUDE_DIR)
+    add_subdirectory(src/main/backends/linux/x11/native)
+  else ()
+    message(STATUS "X11/extensions/XTest.h not found, skipping NativeX11 (not needed for KDE Plasma/Regata OS)")
+  endif ()
 endif ()
+
+
