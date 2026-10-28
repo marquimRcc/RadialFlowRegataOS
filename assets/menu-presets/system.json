@@ -1,0 +1,866 @@
+{
+  "version": "3.0.1",
+  "menus": [
+    {
+      "shortcut": "Control+Space",
+      "shortcutID": "regataos-menu",
+      "useFixedPosition": false,
+      "fixedMenuPosition": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "conditions": {
+        "appName": "dolphin"
+      },
+      "root": {
+        "type": "root",
+        "name": "Dolphin & Arquivos",
+        "icon": "org.kde.dolphin",
+        "iconTheme": "system",
+        "activateWorkflow": {
+          "quickSelectKey": "Backspace",
+          "actions": [
+            {
+              "type": "close-menu"
+            }
+          ]
+        },
+        "children": [
+          {
+            "type": "submenu",
+            "name": "Converter Vídeo",
+            "icon": "video-x-generic",
+            "iconTheme": "system",
+            "openWorkflow": {
+              "quickSelectKey": "V",
+              "actions": []
+            },
+            "activateWorkflow": {
+              "quickSelectKey": "Backspace",
+              "actions": [
+                {
+                  "type": "close-submenu"
+                }
+              ]
+            },
+            "children": [
+              {
+                "type": "button",
+                "name": "Para MP4",
+                "icon": "video-x-generic",
+                "iconTheme": "system",
+                "selectWorkflow": {
+                  "quickSelectKey": "M",
+                  "actions": [
+                    {
+                      "type": "execute-command",
+                      "command": "/usr/lib/kando/scripts/regataos-action.sh convert-mp4 || ~/.config/kando/scripts/regataos-action.sh convert-mp4",
+                      "detached": true,
+                      "isolated": false
+                    },
+                    {
+                      "type": "close-menu"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "button",
+                "name": "Para WebM",
+                "icon": "video-x-generic",
+                "iconTheme": "system",
+                "selectWorkflow": {
+                  "quickSelectKey": "W",
+                  "actions": [
+                    {
+                      "type": "execute-command",
+                      "command": "/usr/lib/kando/scripts/regataos-action.sh convert-webm || ~/.config/kando/scripts/regataos-action.sh convert-webm",
+                      "detached": true,
+                      "isolated": false
+                    },
+                    {
+                      "type": "close-menu"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "button",
+                "name": "Para GIF",
+                "icon": "image-x-generic",
+                "iconTheme": "system",
+                "selectWorkflow": {
+                  "quickSelectKey": "G",
+                  "actions": [
+                    {
+                      "type": "execute-command",
+                      "command": "/usr/lib/kando/scripts/regataos-action.sh convert-gif || ~/.config/kando/scripts/regataos-action.sh convert-gif",
+                      "detached": true,
+                      "isolated": false
+                    },
+                    {
+                      "type": "close-menu"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "button",
+                "name": "Extrair Áudio MP3",
+                "icon": "audio-x-generic",
+                "iconTheme": "system",
+                "selectWorkflow": {
+                  "quickSelectKey": "A",
+                  "actions": [
+                    {
+                      "type": "execute-command",
+                      "command": "/usr/lib/kando/scripts/regataos-action.sh extract-mp3 || ~/.config/kando/scripts/regataos-action.sh extract-mp3",
+                      "detached": true,
+                      "isolated": false
+                    },
+                    {
+                      "type": "close-menu"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "type": "button",
+            "name": "Compactar (.tar.zst)",
+            "icon": "package-x-generic",
+            "iconTheme": "system",
+            "selectWorkflow": {
+              "quickSelectKey": "Z",
+              "actions": [
+                {
+                  "type": "execute-command",
+                  "command": "/usr/lib/kando/scripts/regataos-action.sh compress-zstd || ~/.config/kando/scripts/regataos-action.sh compress-zstd",
+                  "detached": true,
+                  "isolated": false
+                },
+                {
+                  "type": "close-menu"
+                }
+              ]
+            }
+          },
+          {
+            "type": "button",
+            "name": "Abrir Konsole Aqui",
+            "icon": "utilities-terminal",
+            "iconTheme": "system",
+            "selectWorkflow": {
+              "quickSelectKey": "T",
+              "actions": [
+                {
+                  "type": "execute-command",
+                  "command": "/usr/lib/kando/scripts/regataos-action.sh open-terminal || ~/.config/kando/scripts/regataos-action.sh open-terminal",
+                  "detached": true,
+                  "isolated": false
+                },
+                {
+                  "type": "close-menu"
+                }
+              ]
+            }
+          },
+          {
+            "type": "button",
+            "name": "KDE Connect",
+            "icon": "kdeconnect",
+            "iconTheme": "system",
+            "selectWorkflow": {
+              "quickSelectKey": "K",
+              "actions": [
+                {
+                  "type": "execute-command",
+                  "command": "/usr/lib/kando/scripts/regataos-action.sh kdeconnect || ~/.config/kando/scripts/regataos-action.sh kdeconnect",
+                  "detached": true,
+                  "isolated": false
+                },
+                {
+                  "type": "close-menu"
+                }
+              ]
+            }
+          },
+          {
+            "type": "button",
+            "name": "Checksum SHA-256",
+            "icon": "security-high",
+            "iconTheme": "system",
+            "selectWorkflow": {
+              "quickSelectKey": "S",
+              "actions": [
+                {
+                  "type": "execute-command",
+                  "command": "/usr/lib/kando/scripts/regataos-action.sh checksum || ~/.config/kando/scripts/regataos-action.sh checksum",
+                  "detached": true,
+                  "isolated": false
+                },
+                {
+                  "type": "close-menu"
+                }
+              ]
+            }
+          },
+          {
+            "type": "button",
+            "name": "Copiar Caminho",
+            "icon": "edit-copy",
+            "iconTheme": "system",
+            "selectWorkflow": {
+              "quickSelectKey": "C",
+              "actions": [
+                {
+                  "type": "execute-command",
+                  "command": "/usr/lib/kando/scripts/regataos-action.sh copy-path || ~/.config/kando/scripts/regataos-action.sh copy-path",
+                  "detached": true,
+                  "isolated": false
+                },
+                {
+                  "type": "close-menu"
+                }
+              ]
+            }
+          },
+          {
+            "type": "button",
+            "name": "Propriedades",
+            "icon": "dialog-information",
+            "iconTheme": "system",
+            "selectWorkflow": {
+              "quickSelectKey": "P",
+              "actions": [
+                {
+                  "type": "execute-command",
+                  "command": "bash -c 'qdbus6 $(qdbus6 | grep -m1 org.kde.dolphin- | tr -d \" \") /dolphin/Dolphin_1/actions/properties org.qtproject.Qt.QAction.trigger'",
+                  "detached": true,
+                  "isolated": false
+                },
+                {
+                  "type": "close-menu"
+                }
+              ]
+            }
+          },
+          {
+            "type": "button",
+            "name": "Mover para Lixeira",
+            "icon": "user-trash",
+            "iconTheme": "system",
+            "selectWorkflow": {
+              "quickSelectKey": "L",
+              "actions": [
+                {
+                  "type": "execute-command",
+                  "command": "bash -c 'qdbus6 $(qdbus6 | grep -m1 org.kde.dolphin- | tr -d \" \") /dolphin/Dolphin_1/actions/movetotrash org.qtproject.Qt.QAction.trigger'",
+                  "detached": true,
+                  "isolated": false
+                },
+                {
+                  "type": "close-menu"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "shortcut": "Control+Space",
+      "shortcutID": "regataos-menu",
+      "useFixedPosition": false,
+      "fixedMenuPosition": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "conditions": {
+        "appName": "/steam|steam_app|heroic|lutris|retroarch|gamescope|wine/i"
+      },
+      "root": {
+        "type": "root",
+        "name": "Gaming HUD",
+        "icon": "applications-games",
+        "iconTheme": "system",
+        "activateWorkflow": {
+          "quickSelectKey": "Backspace",
+          "actions": [
+            {
+              "type": "close-menu"
+            }
+          ]
+        },
+        "children": [
+          {
+            "type": "button",
+            "name": "Capturar Tela",
+            "icon": "spectacle",
+            "iconTheme": "system",
+            "selectWorkflow": {
+              "quickSelectKey": "C",
+              "actions": [
+                {
+                  "type": "execute-command",
+                  "command": "spectacle -b -n -c",
+                  "detached": true,
+                  "isolated": false
+                },
+                {
+                  "type": "close-menu"
+                }
+              ]
+            }
+          },
+          {
+            "type": "submenu",
+            "name": "Gravar Replay",
+            "icon": "video-x-generic",
+            "iconTheme": "system",
+            "openWorkflow": {
+              "quickSelectKey": "R",
+              "actions": []
+            },
+            "activateWorkflow": {
+              "quickSelectKey": "Backspace",
+              "actions": [
+                {
+                  "type": "close-submenu"
+                }
+              ]
+            },
+            "children": [
+              {
+                "type": "button",
+                "name": "Últimos 30s",
+                "icon": "clock",
+                "iconTheme": "system",
+                "selectWorkflow": {
+                  "quickSelectKey": "3",
+                  "actions": [
+                    {
+                      "type": "execute-command",
+                      "command": "gpu-screen-recorder --replay 30s || kdialog --passivepopup 'Replay 30s gravado!' 2",
+                      "detached": true,
+                      "isolated": false
+                    },
+                    {
+                      "type": "close-menu"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "button",
+                "name": "Últimos 2 Minutos",
+                "icon": "video-x-generic",
+                "iconTheme": "system",
+                "selectWorkflow": {
+                  "quickSelectKey": "2",
+                  "actions": [
+                    {
+                      "type": "execute-command",
+                      "command": "gpu-screen-recorder --replay 120s || kdialog --passivepopup 'Replay 2m gravado!' 2",
+                      "detached": true,
+                      "isolated": false
+                    },
+                    {
+                      "type": "close-menu"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "button",
+                "name": "Gravação Contínua",
+                "icon": "media-record",
+                "iconTheme": "system",
+                "selectWorkflow": {
+                  "quickSelectKey": "G",
+                  "actions": [
+                    {
+                      "type": "execute-command",
+                      "command": "obs --startrecording || kdialog --passivepopup 'Gravando...' 2",
+                      "detached": true,
+                      "isolated": false
+                    },
+                    {
+                      "type": "close-menu"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "type": "button",
+            "name": "GameMode Desempenho",
+            "icon": "speedometer",
+            "iconTheme": "system",
+            "selectWorkflow": {
+              "quickSelectKey": "D",
+              "actions": [
+                {
+                  "type": "execute-command",
+                  "command": "bash -c 'powerprofilesctl set performance 2>/dev/null; kdialog --passivepopup \"Perfil Desempenho Ativado\" 2'",
+                  "detached": true,
+                  "isolated": false
+                },
+                {
+                  "type": "close-menu"
+                }
+              ]
+            }
+          },
+          {
+            "type": "button",
+            "name": "Gamescope / FSR",
+            "icon": "video-display",
+            "iconTheme": "system",
+            "selectWorkflow": {
+              "quickSelectKey": "F",
+              "actions": [
+                {
+                  "type": "execute-command",
+                  "command": "gamescope -U -F fsr || true",
+                  "detached": true,
+                  "isolated": false
+                },
+                {
+                  "type": "close-menu"
+                }
+              ]
+            }
+          },
+          {
+            "type": "button",
+            "name": "Alternar Áudio",
+            "icon": "audio-headset",
+            "iconTheme": "system",
+            "selectWorkflow": {
+              "quickSelectKey": "A",
+              "actions": [
+                {
+                  "type": "execute-command",
+                  "command": "bash -c 'pactl set-default-sink $(pactl list short sinks | awk \"{print \\$2}\" | tail -n1); kdialog --passivepopup \"Dispositivo de áudio alternado\" 2'",
+                  "detached": true,
+                  "isolated": false
+                },
+                {
+                  "type": "close-menu"
+                }
+              ]
+            }
+          },
+          {
+            "type": "button",
+            "name": "Discord",
+            "icon": "com.discordapp.Discord",
+            "iconTheme": "system",
+            "selectWorkflow": {
+              "quickSelectKey": "I",
+              "actions": [
+                {
+                  "type": "execute-command",
+                  "command": "flatpak run com.discordapp.Discord || discord || true",
+                  "detached": true,
+                  "isolated": false
+                },
+                {
+                  "type": "close-menu"
+                }
+              ]
+            }
+          },
+          {
+            "type": "button",
+            "name": "Game Access",
+            "icon": "regataos-gcs",
+            "iconTheme": "system",
+            "selectWorkflow": {
+              "quickSelectKey": "G",
+              "actions": [
+                {
+                  "type": "execute-command",
+                  "command": "regataos-gcs",
+                  "detached": true,
+                  "isolated": false
+                },
+                {
+                  "type": "close-menu"
+                }
+              ]
+            }
+          },
+          {
+            "type": "button",
+            "name": "Max-Q",
+            "icon": "Max-q",
+            "iconTheme": "system",
+            "selectWorkflow": {
+              "quickSelectKey": "M",
+              "actions": [
+                {
+                  "type": "execute-command",
+                  "command": "prime-settings",
+                  "detached": true,
+                  "isolated": false
+                },
+                {
+                  "type": "close-menu"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "shortcut": "Control+Space",
+      "shortcutID": "regataos-menu",
+      "useFixedPosition": false,
+      "fixedMenuPosition": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "root": {
+        "type": "root",
+        "name": "Regata OS",
+        "icon": "start-here-kde",
+        "iconTheme": "system",
+        "activateWorkflow": {
+          "quickSelectKey": "Backspace",
+          "actions": [
+            {
+              "type": "close-menu"
+            }
+          ]
+        },
+        "children": [
+          {
+            "type": "button",
+            "name": "Adicionar Widgets",
+            "icon": "plasma",
+            "iconTheme": "system",
+            "selectWorkflow": {
+              "quickSelectKey": "W",
+              "actions": [
+                {
+                  "type": "execute-command",
+                  "command": "qdbus6 org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.toggleWidgetExplorer",
+                  "detached": true,
+                  "isolated": false
+                },
+                {
+                  "type": "close-menu"
+                }
+              ]
+            }
+          },
+          {
+            "type": "button",
+            "name": "Game Access",
+            "icon": "regataos-gcs",
+            "iconTheme": "system",
+            "selectWorkflow": {
+              "quickSelectKey": "G",
+              "actions": [
+                {
+                  "type": "execute-command",
+                  "command": "regataos-gcs",
+                  "detached": true,
+                  "isolated": false
+                },
+                {
+                  "type": "close-menu"
+                }
+              ]
+            }
+          },
+          {
+            "type": "button",
+            "name": "Regata OS Update",
+            "icon": "regataos-update-manager",
+            "iconTheme": "system",
+            "selectWorkflow": {
+              "quickSelectKey": "U",
+              "actions": [
+                {
+                  "type": "execute-command",
+                  "command": "regataos-update-manager",
+                  "detached": true,
+                  "isolated": false
+                },
+                {
+                  "type": "close-menu"
+                }
+              ]
+            }
+          },
+          {
+            "type": "button",
+            "name": "Max-Q",
+            "icon": "Max-q",
+            "iconTheme": "system",
+            "selectWorkflow": {
+              "quickSelectKey": "M",
+              "actions": [
+                {
+                  "type": "execute-command",
+                  "command": "prime-settings",
+                  "detached": true,
+                  "isolated": false
+                },
+                {
+                  "type": "close-menu"
+                }
+              ]
+            }
+          },
+          {
+            "type": "button",
+            "name": "Suporte Regata OS",
+            "icon": "regataos-support",
+            "iconTheme": "system",
+            "selectWorkflow": {
+              "quickSelectKey": "S",
+              "actions": [
+                {
+                  "type": "execute-command",
+                  "command": "regataos-help",
+                  "detached": true,
+                  "isolated": false
+                },
+                {
+                  "type": "close-menu"
+                }
+              ]
+            }
+          },
+          {
+            "type": "button",
+            "name": "Regata OS Store",
+            "icon": "regataos-store-icon",
+            "iconTheme": "system",
+            "selectWorkflow": {
+              "quickSelectKey": "L",
+              "actions": [
+                {
+                  "type": "execute-command",
+                  "command": "regataos-store",
+                  "detached": true,
+                  "isolated": false
+                },
+                {
+                  "type": "close-menu"
+                }
+              ]
+            }
+          },
+          {
+            "type": "button",
+            "name": "Capturar Tela",
+            "icon": "spectacle",
+            "iconTheme": "system",
+            "selectWorkflow": {
+              "quickSelectKey": "C",
+              "actions": [
+                {
+                  "type": "execute-command",
+                  "command": "spectacle -b -n -c",
+                  "detached": true,
+                  "isolated": false
+                },
+                {
+                  "type": "close-menu"
+                }
+              ]
+            }
+          },
+          {
+            "type": "submenu",
+            "name": "Estilo de Ícones",
+            "icon": "preferences-desktop-theme",
+            "iconTheme": "system",
+            "openWorkflow": {
+              "quickSelectKey": "I",
+              "actions": []
+            },
+            "activateWorkflow": {
+              "quickSelectKey": "Backspace",
+              "actions": [
+                {
+                  "type": "close-submenu"
+                }
+              ]
+            },
+            "children": [
+              {
+                "type": "button",
+                "name": "1. Minimalista (Branco)",
+                "icon": "draw-brush",
+                "iconTheme": "system",
+                "selectWorkflow": {
+                  "quickSelectKey": "1",
+                  "actions": [
+                    {
+                      "type": "execute-command",
+                      "command": "/usr/lib/kando/scripts/regataos-switch-icons.sh minimal || ~/.config/kando/scripts/regataos-switch-icons.sh minimal",
+                      "detached": true,
+                      "isolated": false
+                    },
+                    {
+                      "type": "close-menu"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "button",
+                "name": "2. Nativos do SO",
+                "icon": "start-here-kde",
+                "iconTheme": "system",
+                "selectWorkflow": {
+                  "quickSelectKey": "2",
+                  "actions": [
+                    {
+                      "type": "execute-command",
+                      "command": "/usr/lib/kando/scripts/regataos-switch-icons.sh system || ~/.config/kando/scripts/regataos-switch-icons.sh system",
+                      "detached": true,
+                      "isolated": false
+                    },
+                    {
+                      "type": "close-menu"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "button",
+                "name": "3. Cyber Gaming Neon",
+                "icon": "applications-games",
+                "iconTheme": "system",
+                "selectWorkflow": {
+                  "quickSelectKey": "3",
+                  "actions": [
+                    {
+                      "type": "execute-command",
+                      "command": "/usr/lib/kando/scripts/regataos-switch-icons.sh neon || ~/.config/kando/scripts/regataos-switch-icons.sh neon",
+                      "detached": true,
+                      "isolated": false
+                    },
+                    {
+                      "type": "close-menu"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "type": "submenu",
+            "name": "Janelas & Controle",
+            "icon": "preferences-system-windows",
+            "iconTheme": "system",
+            "openWorkflow": {
+              "quickSelectKey": "J",
+              "actions": []
+            },
+            "activateWorkflow": {
+              "quickSelectKey": "Backspace",
+              "actions": [
+                {
+                  "type": "close-submenu"
+                }
+              ]
+            },
+            "children": [
+              {
+                "type": "button",
+                "name": "Maximizar",
+                "icon": "window",
+                "iconTheme": "system",
+                "selectWorkflow": {
+                  "quickSelectKey": "M",
+                  "actions": [
+                    {
+                      "type": "execute-command",
+                      "command": "qdbus6 org.kde.kglobalaccel /component/kwin invokeShortcut 'Window Maximize'",
+                      "detached": true,
+                      "isolated": false
+                    },
+                    {
+                      "type": "close-menu"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "button",
+                "name": "Snap Esquerda",
+                "icon": "go-previous",
+                "iconTheme": "system",
+                "selectWorkflow": {
+                  "quickSelectKey": "E",
+                  "actions": [
+                    {
+                      "type": "execute-command",
+                      "command": "qdbus6 org.kde.kglobalaccel /component/kwin invokeShortcut 'Window Quick Tile Left'",
+                      "detached": true,
+                      "isolated": false
+                    },
+                    {
+                      "type": "close-menu"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "button",
+                "name": "Snap Direita",
+                "icon": "go-next",
+                "iconTheme": "system",
+                "selectWorkflow": {
+                  "quickSelectKey": "D",
+                  "actions": [
+                    {
+                      "type": "execute-command",
+                      "command": "qdbus6 org.kde.kglobalaccel /component/kwin invokeShortcut 'Window Quick Tile Right'",
+                      "detached": true,
+                      "isolated": false
+                    },
+                    {
+                      "type": "close-menu"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "button",
+                "name": "Configurações",
+                "icon": "preferences-system",
+                "iconTheme": "system",
+                "selectWorkflow": {
+                  "quickSelectKey": "C",
+                  "actions": [
+                    {
+                      "type": "execute-command",
+                      "command": "systemsettings",
+                      "detached": true,
+                      "isolated": false
+                    },
+                    {
+                      "type": "close-menu"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

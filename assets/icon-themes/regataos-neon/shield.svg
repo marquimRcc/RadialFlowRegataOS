@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48"><defs>
+      <linearGradient id="g_shield" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#00F5FF" />
+        <stop offset="100%" stop-color="#0077FE" />
+      </linearGradient>
+    </defs>
+    <path d="M24 6L39 12V22C39 31.5 32.5 39.5 24 42C15.5 39.5 9 31.5 9 22V12L24 6Z" fill="url(#g_shield)" fill-opacity="0.2" stroke="url(#g_shield)" stroke-width="2.5" stroke-linejoin="round" />
+    <path d="M17 22L22 27L31 18" fill="none" stroke="#00F5FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /></svg>

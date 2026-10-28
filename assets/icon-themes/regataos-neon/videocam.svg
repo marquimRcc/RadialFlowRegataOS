@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48"><defs>
+      <linearGradient id="g_videocam" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#00F5FF" />
+        <stop offset="100%" stop-color="#00B4D8" />
+      </linearGradient>
+    </defs>
+    <rect x="6" y="12" width="24" height="24" rx="5" fill="url(#g_videocam)" fill-opacity="0.2" stroke="url(#g_videocam)" stroke-width="2.5" />
+    <path d="M30 20L42 14V34L30 28" fill="url(#g_videocam)" fill-opacity="0.4" stroke="url(#g_videocam)" stroke-width="2.5" stroke-linejoin="round" />
+    <circle cx="18" cy="24" r="4" fill="#00F5FF" /></svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48"><defs>
+      <linearGradient id="g_chat" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#5865F2" />
+        <stop offset="100%" stop-color="#7289DA" />
+      </linearGradient>
+    </defs>
+    <path d="M40 24C40 32.8 32.8 40 24 40C20.5 40 17.3 38.9 14.6 37L6 40L9 32.8C7.1 30.3 6 27.3 6 24C6 15.2 13.2 8 24 8C32.8 8 40 15.2 40 24Z" fill="url(#g_chat)" fill-opacity="0.25" stroke="url(#g_chat)" stroke-width="2.5" stroke-linejoin="round" />
+    <circle cx="16" cy="24" r="2.5" fill="#5865F2" />
+    <circle cx="24" cy="24" r="2.5" fill="#5865F2" />
+    <circle cx="32" cy="24" r="2.5" fill="#5865F2" /></svg>

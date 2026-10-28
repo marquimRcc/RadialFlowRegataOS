@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48"><defs>
+      <linearGradient id="g_audio" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#00FF88" />
+        <stop offset="100%" stop-color="#14F195" />
+      </linearGradient>
+    </defs>
+    <path d="M12 28V20M18 34V14M24 38V10M30 32V16M36 26V22" stroke="url(#g_audio)" stroke-width="3" stroke-linecap="round" />
+    <circle cx="24" cy="24" r="20" fill="url(#g_audio)" fill-opacity="0.1" stroke="url(#g_audio)" stroke-width="2" stroke-dasharray="4 4" /></svg>

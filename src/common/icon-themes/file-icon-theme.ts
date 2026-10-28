@@ -61,16 +61,21 @@ export class FileIconTheme implements IconTheme {
     const containerDiv = document.createElement('div');
     containerDiv.classList.add('icon-container');
 
+    let iconFile = icon;
+    if (!iconFile.includes('.') && this.description.icons.includes(`${icon}.svg`)) {
+      iconFile = `${icon}.svg`;
+    }
+
     // If the icon is an SVG, we want to directly embed it into the DOM. This makes it
     // colorable using the "currentColor" fill property. Otherwise, we use an <img> tag to
     // load the icon.
-    if (icon.endsWith('.svg')) {
-      this.loadAndInjectSvg(`file://${this.description.directory}/${icon}`, containerDiv);
+    if (iconFile.endsWith('.svg')) {
+      this.loadAndInjectSvg(`file://${this.description.directory}/${iconFile}`, containerDiv);
       return containerDiv;
     }
 
     const iconDiv = document.createElement('img');
-    iconDiv.src = `file://${this.description.directory}/${icon}?reload=${reloadIteration}`;
+    iconDiv.src = `file://${this.description.directory}/${iconFile}?reload=${reloadIteration}`;
     iconDiv.draggable = false;
 
     containerDiv.appendChild(iconDiv);

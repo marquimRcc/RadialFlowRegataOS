@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48"><defs>
+      <linearGradient id="g_cam" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#FF007F" />
+        <stop offset="100%" stop-color="#00F5FF" />
+      </linearGradient>
+    </defs>
+    <path d="M6 14C6 11.8 7.8 10 10 10H14L17 6H31L34 10H38C40.2 10 42 11.8 42 14V36C42 38.2 40.2 40 38 40H10C7.8 40 6 38.2 6 36V14Z" fill="url(#g_cam)" fill-opacity="0.2" stroke="url(#g_cam)" stroke-width="2.5" stroke-linejoin="round" />
+    <circle cx="24" cy="25" r="8" fill="none" stroke="url(#g_cam)" stroke-width="2.5" />
+    <circle cx="24" cy="25" r="3" fill="#00F5FF" /></svg>

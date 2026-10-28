@@ -143,7 +143,7 @@ export abstract class LinuxBackend extends Backend {
     );
     const icons = await this.getIcons(
       allThemeDirectories,
-      ['apps', 'actions', 'devices', 'mimetypes', 'places'],
+      ['apps', 'actions', 'devices', 'mimetypes', 'places', 'status', 'categories', 'preferences'],
       [
         'scalable',
         '256x256',
@@ -158,6 +158,10 @@ export abstract class LinuxBackend extends Backend {
         '48',
         '32x32',
         '32',
+        '22x22',
+        '22',
+        '16x16',
+        '16',
         'symbolic',
       ],
       ['.svg', '.png']

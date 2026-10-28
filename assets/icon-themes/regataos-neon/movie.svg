@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48"><defs>
+      <linearGradient id="g_movie" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#FF007F" />
+        <stop offset="100%" stop-color="#7928CA" />
+      </linearGradient>
+    </defs>
+    <rect x="6" y="10" width="36" height="28" rx="6" fill="url(#g_movie)" fill-opacity="0.2" stroke="url(#g_movie)" stroke-width="2.5" />
+    <path d="M6 18H42" stroke="url(#g_movie)" stroke-width="2" />
+    <path d="M12 10L16 18M22 10L26 18M32 10L36 18" stroke="url(#g_movie)" stroke-width="2" stroke-linecap="round" />
+    <polygon points="21,24 31,29 21,34" fill="#FF007F" /></svg>

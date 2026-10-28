@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48"><defs>
+      <linearGradient id="g_max" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#00FF88" />
+        <stop offset="100%" stop-color="#00F5FF" />
+      </linearGradient>
+    </defs>
+    <path d="M8 17V10C8 8.9 8.9 8 10 8H17M31 8H38C39.1 8 40 8.9 40 10V17M40 31V38C40 39.1 39.1 40 38 40H31M17 40H10C8.9 40 8 39.1 8 38V31" fill="none" stroke="url(#g_max)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /></svg>

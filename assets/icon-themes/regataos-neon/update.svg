@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48"><defs>
+      <linearGradient id="g_upd" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#00FF88" />
+        <stop offset="100%" stop-color="#00F5FF" />
+      </linearGradient>
+    </defs>
+    <path d="M12 24C12 17.4 17.4 12 24 12C28.5 12 32.4 14.5 34.4 18M36 24C36 30.6 30.6 36 24 36C19.5 36 15.6 33.5 13.6 30" fill="none" stroke="url(#g_upd)" stroke-width="3" stroke-linecap="round" />
+    <polyline points="31,18 36,18 36,13" fill="none" stroke="url(#g_upd)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    <polyline points="17,30 12,30 12,35" fill="none" stroke="url(#g_upd)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M24 19V29M20 25L24 29L28 25" stroke="#00FF88" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" /></svg>

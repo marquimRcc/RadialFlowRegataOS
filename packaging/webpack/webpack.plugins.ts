@@ -49,6 +49,7 @@ plugins.push(
   new CopyPlugin({
     patterns: [
       { from: 'icon-themes', to: 'assets/icon-themes', context: 'assets/' },
+      { from: 'menu-presets', to: 'assets/menu-presets', context: 'assets/' },
       { from: 'menu-themes', to: 'assets/menu-themes', context: 'assets/' },
       { from: 'sound-themes', to: 'assets/sound-themes', context: 'assets/' },
       { from: 'locales', to: '../main/locales' },
