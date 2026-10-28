@@ -3,6 +3,9 @@
 
 import os from 'os';
 
+import fs from 'fs';
+import path from 'path';
+
 export const ignores: RegExp[] = [];
 
 if (os.platform() !== 'win32') {
@@ -17,4 +20,13 @@ if (os.platform() !== 'linux') {
   ignores.push(/NativeX11\.node$/);
   ignores.push(/NativeWLR\.node$/);
   ignores.push(/NativeHypr\.node$/);
+} else {
+  // On Linux, if optional native modules were not built, ignore them so Webpack succeeds
+  if (!fs.existsSync(path.resolve(__dirname, '../../build/Release/NativeX11.node'))) {
+    ignores.push(/NativeX11\.node$/);
+  }
+  if (!fs.existsSync(path.resolve(__dirname, '../../build/Release/NativeWLR.node'))) {
+    ignores.push(/NativeWLR\.node$/);
+  }
 }
+
