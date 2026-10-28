@@ -194,7 +194,7 @@ export class KandoApp {
     // we create a new example menu when Kando is started the next time.
     if (this.menuSettings.get('menus').length === 0) {
       this.menuSettings.set({
-        menus: [this.createExampleMenu()],
+        menus: this.createExampleMenus(),
       });
     }
 
@@ -1806,7 +1806,7 @@ export class KandoApp {
    *
    * All menu configurations are stored in the `example-menus` directory.
    */
-  private createExampleMenu(): MenuType {
+  private createExampleMenus(): MenuType[] {
     // To enable localization of the example menus, we need to lookup the strings with
     // i18next after loading the menu structure from JSON. i18next-cli cannot extract
     // the strings from JSON files, therefore we have to specify all strings from the
@@ -1856,20 +1856,21 @@ export class KandoApp {
     i18next.t('example-menu.bookmarks.music')
     */
 
-    let menu: MenuType;
+    let rawMenus: MenuType | MenuType[];
 
     if (process.platform === 'win32') {
-      menu = require('./example-menus/windows.json');
+      rawMenus = require('./example-menus/windows.json');
     } else if (process.platform === 'darwin') {
-      menu = require('./example-menus/macos.json');
+      rawMenus = require('./example-menus/macos.json');
     } else {
       try {
-        menu = require('./example-menus/regataos.json');
+        rawMenus = require('./example-menus/regataos.json');
       } catch {
-        menu = require('./example-menus/linux.json');
+        rawMenus = require('./example-menus/linux.json');
       }
     }
 
+    const menuList: MenuType[] = Array.isArray(rawMenus) ? rawMenus : [rawMenus];
 
     const translate = (item: MenuItem | RootMenuItem) => {
       item.name = i18next.t(item.name as ParseKeys);
@@ -1880,8 +1881,10 @@ export class KandoApp {
       }
     };
 
-    translate(menu.root);
+    for (const menu of menuList) {
+      translate(menu.root);
+    }
 
-    return menu;
+    return menuList;
   }
 }

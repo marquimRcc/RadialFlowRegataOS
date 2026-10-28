@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: CC0-1.0
 
 import type { ForgeConfig } from '@electron-forge/shared-types';
+import path from 'node:path';
 import { MakerSquirrel } from '@electron-forge/maker-squirrel';
 import { MakerZIP } from '@electron-forge/maker-zip';
 import { MakerDeb } from '@electron-forge/maker-deb';
