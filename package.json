@@ -10,6 +10,7 @@
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
+    "make:rpm": "node packaging/rpm/build-rpm.mjs",
     "lint": "eslint .",
     "tscheck": "tsc --noEmit",
     "prettier": "prettier --check src",

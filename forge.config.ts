@@ -57,10 +57,10 @@ const rpmOptions: MakerRpmConfigOptions & { specTemplate: string } = {
 
   // Disables build_id_links (https://github.com/kando-menu/kando/issues/502) and fixes the
   // name of the desktop file and the %install step. See the template for details.
-  specTemplate: 'packaging/rpm/kando.spec.ejs',
+  specTemplate: path.resolve(__dirname, 'packaging/rpm/kando.spec.ejs'),
 };
 
-const makerRPM = new MakerRpm({ options: rpmOptions });
+const makerRPM = new MakerRpm(rpmOptions as any);
 
 // The Linux makers create desktop files named after the package "name" option. We patch the
 // shared installer to support a dedicated desktop file base name so that we can keep the

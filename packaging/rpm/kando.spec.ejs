@@ -39,7 +39,7 @@ cp -r %{_topdir}/BUILD/usr/* %{buildroot}/usr/
 %files
 /usr/bin/<%= name %>
 /usr/lib/<%= name %>/
-/usr/share/applications/menu.kando.Kando.desktop
+/usr/share/applications/*.desktop
 /usr/share/doc/<%= name %>/
 <% if (_.isObject(icon)) {
   _.forEach(icon, function (path, resolution) {
