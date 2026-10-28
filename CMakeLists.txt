@@ -35,12 +35,7 @@ if (UNIX AND NOT APPLE)
     message(STATUS "xkbcommon/xkbcommon.h not found, skipping NativeWLR (not needed for KDE Plasma/Regata OS)")
   endif ()
 
-  find_path(XTEST_INCLUDE_DIR "X11/extensions/XTest.h")
-  if (XTEST_INCLUDE_DIR)
-    add_subdirectory(src/main/backends/linux/x11/native)
-  else ()
-    message(STATUS "X11/extensions/XTest.h not found, skipping NativeX11 (not needed for KDE Plasma/Regata OS)")
-  endif ()
+  add_subdirectory(src/main/backends/linux/x11/native)
 endif ()
 
 
